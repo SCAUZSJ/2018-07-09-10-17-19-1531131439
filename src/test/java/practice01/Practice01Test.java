@@ -3,7 +3,7 @@ package practice01;
 import org.junit.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-
+//预测5分钟 实际3分钟
 public class Practice01Test {
     @Test
     public void should_person_have_name_and_age() throws Exception {
