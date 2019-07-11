@@ -8,7 +8,7 @@ import java.io.PrintStream;
 import java.util.LinkedList;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-
+//预计15分，实际17分钟
 public class Practice11Test {
     private Klass klass2;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
