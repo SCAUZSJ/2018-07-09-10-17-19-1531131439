@@ -1,7 +1,7 @@
 package practice10;
 
 
-import com.sun.deploy.util.StringUtils;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,8 +33,7 @@ public class Teacher extends Person{
     @Override
     public String introduce() {
         if(this.classes!=null&&this.classes.size()!=0){
-            List<String> collect = this.classes.stream().map(value -> value.getNumber()+"").collect(Collectors.toList());
-            String classesString = StringUtils.join(collect, ", ");
+            String classesString = this.classes.stream().map(value -> value.getNumber()+"").collect(Collectors.joining(", "));
             return super.introduce()+this.info+"I teach Class "+classesString+".";
         }
         return super.introduce()+this.info+"I teach No Class.";
