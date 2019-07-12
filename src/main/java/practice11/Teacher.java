@@ -1,6 +1,9 @@
 package practice11;
 
+import com.sun.deploy.util.StringUtils;
+
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     private List<Klass> classes;
@@ -37,13 +40,9 @@ public class Teacher extends Person{
     @Override
     public String introduce() {
         if(this.classes!=null&&this.classes.size()!=0){
-            String classesString="";
-            for(int i=0;i<classes.size();i++){
-                classesString +=classes.get(i).getNumber();
-                if(i != classes.size()-1){
-                    classesString +=", ";
-                }
-            }
+
+            List<String> collect = this.classes.stream().map(value -> value.getNumber()+"").collect(Collectors.toList());
+            String classesString = StringUtils.join(collect, ", ");
             return super.introduce()+this.info+"I teach Class "+classesString+".";
         }
         return super.introduce()+this.info+"I teach No Class.";

@@ -9,9 +9,10 @@ public class Person {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) return true;
-        Person other = (Person) obj;
-        return this.id == other.id;
+        if(obj instanceof Person){
+            return ((Person)obj).getId() ==this.id;
+        }
+        return super.equals(obj);
     }
 
 
